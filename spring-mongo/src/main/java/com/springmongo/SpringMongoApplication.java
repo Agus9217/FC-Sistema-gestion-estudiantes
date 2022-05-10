@@ -4,6 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.List;
 
 @SpringBootApplication
@@ -20,7 +23,11 @@ public class SpringMongoApplication {
 				"justinibarrola92@gmail.com",
 				Gender.MALE,
 				address,
-				List.of("Computer Science"), );
+				List.of("Computer Science", "Maths"),
+				BigDecimal.TEN,
+				LocalDateTime.now());
+
+		repository.insert(student);
 	}
 
 }
